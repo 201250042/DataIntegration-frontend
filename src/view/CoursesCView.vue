@@ -64,18 +64,11 @@
         <!-- 操作 -->
         <el-table-column label="操作">
           <template slot-scope="scope">
-
-          <el-popconfirm
-              title="确认选课？"
-              @confirm="selectCourse(scope.row)"
-          >
             <el-button
-              slot="reference"
+              @click="selectCourse(scope.row)"
               type="text"
               class="selectButton"
             >选课</el-button>
-            </el-popconfirm>
-
           </template>
         </el-table-column>
       </el-table>
