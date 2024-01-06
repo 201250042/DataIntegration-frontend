@@ -49,6 +49,10 @@ export default {
         // case 'A': this.$router.push('/a-selectedCourses'); break;
         default: console.log('error');
       }
+    },
+
+    jumpToIdentify () {
+              this.$router.push('./identify')
     }
   }
 }
