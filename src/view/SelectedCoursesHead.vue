@@ -9,8 +9,15 @@
         <el-button
           type="text"
           class="courseLink"
+          @click="jumpToIdentify"
+        >退出登录</el-button>
+
+        <el-button
+          type="text"
+          class="courseLink"
           @click="showSelectedCourse"
         >查看已选课程</el-button>
+
       </div>
     </el-header>
     <el-container>
