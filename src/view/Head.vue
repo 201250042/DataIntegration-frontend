@@ -3,9 +3,15 @@
     <el-header style="margin-bottom: 20px">
       <div class="header">
         <h1 class="title">南京大学选课系统</h1>
-        <span class="stuName">你好，
-          <span class="stuAccount">{{ acc }}</span>
-        </span>
+
+            <span class="stuName">你好，
+                              <span class="stuAccount">{{ acc }}</span>
+            </span>
+        <el-button
+                  type="text"
+                  class="courseLink"
+                  @click="jumpToIdentify"
+                >退出登录</el-button>
         <el-button
           type="text"
           class="courseLink"
@@ -42,7 +48,12 @@ export default {
             case 'A': this.$router.push('/a-selectedCourses'); break;
             default: console.log('error');
         }
-    }
+    },
+
+    jumpToIdentify () {
+          this.$router.push('./identify')
+        }
+
   }
 }
 </script>
@@ -80,4 +91,6 @@ export default {
   font-size: 22px;
   color: #ffffff;
 }
+
+
 </style>
