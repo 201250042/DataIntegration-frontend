@@ -43,11 +43,16 @@
       <!-- 退课 -->
       <el-table-column label="操作">
         <template slot-scope="scope">
+        <el-popconfirm
+            title="确认退课？"
+            @confirm="dropCourse(scope.row)"
+        >
           <el-button
-            @click="dropCourse(scope.row)"
+            slot="reference"
             type="text"
             class="dropButton"
           >退课 </el-button>
+          </el-popconfirm>
         </template>
       </el-table-column>
     </el-table>
