@@ -49,7 +49,9 @@
           >
           <el-button
             slot="reference"
-            type="text"
+            type="primary"
+            plain
+            size="small"
             class="dropButton"
           >退课 </el-button>
           </el-popconfirm>

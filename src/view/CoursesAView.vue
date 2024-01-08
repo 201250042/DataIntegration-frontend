@@ -65,7 +65,9 @@
           >
             <el-button
               slot="reference"
-              type="text"
+              type="primary"
+              plain
+              size="small"
               class="selectButton"
             >选课</el-button>
             </el-popconfirm>
