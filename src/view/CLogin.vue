@@ -77,7 +77,11 @@ export default {
           }
           CLoginCheck(config).then(res => {
             if (res === "") {
-              alert('账户不存在，请先注册！');
+              /*alert('账户不存在，请先注册！');*/
+                this.$message({
+                          message: '账户不存在，请先注册！',
+                          type: 'warning'
+                        });
               //TODO:跳转注册
             }
             else {
@@ -85,7 +89,11 @@ export default {
               let token = xmlDoc.getElementsByTagName('string')[3].innerHTML;
               sessionStorage.setItem('acc', this.loginForm.studentId);
               sessionStorage.setItem('token', token);
-              alert('登录成功!');
+              this.$message({
+                showClose: true,
+                message: '登录成功',
+                type: 'success',
+              });
               this.$router.push('c-course');
             }
           })

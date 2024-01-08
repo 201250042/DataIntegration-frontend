@@ -82,7 +82,11 @@ export default {
             let map = xmlDoc.getElementsByTagName('string');
             // console.log(map);
             if (map.length == 2) {
-              alert('账户不存在，请先注册！');
+              /*alert('账户不存在，请先注册！');*/
+                this.$message({
+                          message: '账户不存在，请先注册！',
+                          type: 'warning'
+                        });
               //TODO:跳转注册
             }
             else {
@@ -91,7 +95,11 @@ export default {
               // console.log(token);
               sessionStorage.setItem('acc', this.loginForm.studentId);
               // sessionStorage.setItem('token', token);
-              alert('登录成功!');
+              this.$message({
+                showClose: true,
+                message: '登录成功',
+                type: 'success',
+              });
               this.$router.push('/b-course');
             }
           })
