@@ -1,4 +1,5 @@
 <template>
+  <div id="building">
     <div class="login-container">
       <el-card class="login-card">
         <div class="login-title">登录</div>
@@ -13,7 +14,7 @@
             label="账号"
             prop="account"
           >
-            <el-input
+            <el-input show-password
               v-model="loginForm.account"
               placeholder="请输入账号"
             ></el-input>
@@ -22,24 +23,45 @@
             label="密码"
             prop="password"
           >
-            <el-input
+            <el-input show-password
               v-model="loginForm.password"
               type="password"
               placeholder="请输入密码"
             ></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button
+            <el-button style="position: center;"
               type="primary"
               @click="login"
               class="loginButton"
+
             >登录</el-button>
+            <el-button style="position: absolute; left: 20px"
+                       type="primary"
+                       @click="register"
+                       class="registerButton"
+
+            >注册</el-button>
+
           </el-form-item>
         </el-form>
+
+        <div class="tips"  style="position: absolute;left: 1000px" >
+          <el-link type="white" @click="retrievePWD">忘记密码</el-link>
+        </div>
+
+
+        <!--        <div class="warn">@NJU</div>-->
+<!--    <button type="primary"  class="register_btn" @click="register">若无账号请点击注册</button>-->
       </el-card>
+
+
     </div>
+
+
+  </div>
   </template>
-    
+
     <script>
   const xml2js = require('xml2js');
   import { ALoginCheck } from '@/network/courses';
@@ -61,6 +83,10 @@
       }
     },
     methods: {
+      retrievePWD(){this.$router.push('/retrieve-pwd')},//wxc新增
+
+      register(){  this.$router.push('/admin-register')},//wxc新增
+
       login() {
         if(this.loginForm.account === 'admin' && this.loginForm.password === '123456') {
           sessionStorage.setItem('acc', 'admin'); //TODO: 最后需要删除
@@ -73,43 +99,7 @@
         } else {
           this.$message.error('密码错误');
         }
-        // this.$refs.loginForm.validate(valid => {
-        //   if (valid) {
-        //     // 处理登录逻辑，发送请求验证学号和密码是否匹配
-        //     let form = {
-        //       '账户名': this.loginForm.account,
-        //       '密码': this.loginForm.password,
-        //     }
-        //     let xml = this.json2Xml(form);
-        //     console.log(xml);
-        //     let config = {
-        //       params: {
-        //         userAccountXml: xml
-        //       }
-        //     }
-        //     ALoginCheck(config).then(res => {
-        //       console.log(res);
-        //       let xmlDoc = new DOMParser().parseFromString(res, 'text/xml');
-        //       let map = xmlDoc.getElementsByTagName('string');
-        //       // console.log(map);
-        //       if (map.length == 2) {
-        //         alert('账户不存在，请先注册！');
-        //         //TODO:跳转注册
-        //       }
-        //       else {
-        //         let xmlDoc = new DOMParser().parseFromString(res, 'text/xml');
-        //         // let token = xmlDoc.getElementsByTagName('string')[3].innerHTML;
-        //         // console.log(token);
-        //         sessionStorage.setItem('acc', this.loginForm.account);
-        //         // sessionStorage.setItem('token', token);
-        //         alert('登录成功!');
-        //         this.$router.push('/admin');
-        //       }
-        //     })
-        //   } else {
-        //     console.log('表单校验失败');
-        //   }
-        // });
+
       },
       json2Xml(json) {
         let builder = new xml2js.Builder();
@@ -118,33 +108,52 @@
     }
   }
     </script>
-    
+
     <style scoped>
   .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height:80vh;
+
   }
-  
+
   .login-card {
     width: 400px;
   }
-  
+
   .login-title {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
   }
-  
+
   .login-form {
     margin-top: 20px;
   }
-  
+
   .loginButton {
+    margin-left:100px;
+  }
+
+  .registerButton{
     margin-left: 65px;
   }
-  </style>
-    
-  
+
+  .tips{
+    font-size: larger;
+    font-family: 黑体;
+    font-style: italic;
+  }
+
+  #building{
+    background:url("@/view/img/bricks.jpg");
+    width:100%;
+    height:100%;
+    position:fixed;
+    background-size:100% 100%;
+  }
+/*building为新加内容*/
+    </style>
+

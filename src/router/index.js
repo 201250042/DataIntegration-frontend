@@ -10,21 +10,28 @@ import StudentView from '@/view/StudentView.vue'
 import CLogin from '@/view/CLogin.vue'
 import CSelectedCourses from '@/view/SelectedCoursesCView.vue'
 import BSelectedCourses from '@/view/SelectedCoursesBView.vue'
+import CRegister from "@/view/CRegister.vue";
 
 // B
 import BLogin from '@/view/BLogin.vue'
 import CoursesBView from '@/view/CoursesBView.vue'
+import BRegister from "@/view/BRegister.vue";
 
 // A
 import ALogin from '@/view/ALogin.vue'
 import CoursesAView from '@/view/CoursesAView.vue'
 import ASelectedCourses from '@/view/SelectedCoursesAView.vue'
+import ARegister from "@/view/ARegister.vue";
 
 // admin
 import AdminLogin from '@/view/AdminLogin'
 import AdminView from '@/view/AdminView'
 
 import Identify from '@/view/Identify'
+
+import AdminRegister from "@/view/AdminRegister.vue";
+import RetrievePWD from "@/view/retrievePWD.vue";
+//新增的路径
 
 Vue.use(VueRouter);
 
@@ -53,6 +60,11 @@ const router = new VueRouter({
             path: '/c-selectedCourses',
             component: CSelectedCourses
         },
+
+        {
+            path:'/c-register',
+            component:CRegister
+        },
         // B
         {
             path: '/b-login',
@@ -65,6 +77,11 @@ const router = new VueRouter({
         {
             path: '/b-selectedCourses',
             component: BSelectedCourses
+        },
+
+        {
+            path:'/b-register',
+            component:BRegister
         },
         // A
         {
@@ -79,6 +96,10 @@ const router = new VueRouter({
             path: '/a-selectedCourses',
             component: ASelectedCourses
         },
+        {
+            path:'/a-register',
+            component:ARegister
+        },
         // Admin
         {
             path: '/admin-login',
@@ -88,11 +109,25 @@ const router = new VueRouter({
             path: '/admin',
             component: AdminView
         },
+
+        //wxc新增： AdminRegister
+        {
+            path:'/admin-register',
+            component:AdminRegister
+        },
+
         // Identify
         {
             path: '/identify',
             component: Identify
+        },
+        //RetrievePWD 找回密码
+        {
+            path:'/retrieve-pwd',
+            component:RetrievePWD
         }
+
+
     ]
 })
 

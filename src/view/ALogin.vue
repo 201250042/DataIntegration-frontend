@@ -1,4 +1,5 @@
 <template>
+  <div id="building">
   <div class="login-container">
     <el-card class="login-card">
       <div class="login-title">登录</div>
@@ -13,7 +14,7 @@
           label="学号"
           prop="studentId"
         >
-          <el-input
+          <el-input show-password
             v-model="loginForm.studentId"
             placeholder="请输入学号"
           ></el-input>
@@ -22,7 +23,7 @@
           label="密码"
           prop="password"
         >
-          <el-input
+          <el-input show-password
             v-model="loginForm.password"
             type="password"
             placeholder="请输入密码"
@@ -34,12 +35,27 @@
             @click="login"
             class="loginButton"
           >登录</el-button>
+
+          <el-button style="position: absolute; left: 20px"
+                     type="primary"
+                     @click="register"
+                     class="registerButton"
+
+          >注册</el-button>
+
+
         </el-form-item>
       </el-form>
+
+      <div class="tips"  style="position: absolute;left: 1000px" >
+        <el-link type="white" @click="retrievePWD">忘记密码</el-link>
+      </div>
+
     </el-card>
   </div>
+  </div>
 </template>
-  
+
   <script>
 const xml2js = require('xml2js');
 import { ALoginCheck } from '@/network/courses';
@@ -61,6 +77,10 @@ export default {
     }
   },
   methods: {
+    retrievePWD(){this.$router.push('/retrieve-pwd')},//wxc新增
+
+    register(){  this.$router.push('/a-register')},//wxc新增
+
     login() {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
@@ -82,12 +102,9 @@ export default {
             let map = xmlDoc.getElementsByTagName('string');
             // console.log(map);
             if (map.length == 2) {
-              /*alert('账户不存在，请先注册！');*/
-              this.$message({
-                message: '账户不存在，请先注册！',
-                type: 'warning'
-              });
-              //TODO:跳转注册
+              alert('账户不存在，请先注册！');
+              this.$router.push('/a-register');
+              //TODO:跳转注册已完成
             }
             else {
               let xmlDoc = new DOMParser().parseFromString(res, 'text/xml');
@@ -95,11 +112,7 @@ export default {
               // console.log(token);
               sessionStorage.setItem('acc', this.loginForm.studentId);
               // sessionStorage.setItem('token', token);
-              this.$message({
-                  showClose: true,
-                  message: '登录成功',
-                  type: 'success',
-                });
+              alert('登录成功!');
               this.$router.push('/a-course');
             }
           })
@@ -115,13 +128,14 @@ export default {
   }
 }
   </script>
-  
-  <style scoped>
+
+<style scoped>
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height:80vh;
+
 }
 
 .login-card {
@@ -140,7 +154,25 @@ export default {
 }
 
 .loginButton {
+  margin-left:100px;
+}
+
+.registerButton{
   margin-left: 65px;
 }
+
+.tips{
+  font-size: larger;
+  font-family: 黑体;
+  font-style: italic;
+}
+
+#building{
+  background:url("@/view/img/bricks.jpg");
+  width:100%;
+  height:100%;
+  position:fixed;
+  background-size:100% 100%;
+}
+/*building为新加内容*/
 </style>
-  
