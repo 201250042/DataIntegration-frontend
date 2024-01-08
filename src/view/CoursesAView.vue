@@ -59,7 +59,6 @@
         <!-- 操作 -->
         <el-table-column label="操作">
           <template slot-scope="scope">
-
           <el-popconfirm
             title="确认选课？"
             @confirm="selectCourse(scope.row)"
@@ -70,9 +69,9 @@
               class="selectButton"
             >选课</el-button>
             </el-popconfirm>
-
           </template>
         </el-table-column>
+
       </el-table>
     </div>
   </div>
@@ -113,6 +112,7 @@ export default {
       ],
       selectedInstitude: 'A',
       account: '',
+
     }
   },
   methods: {
@@ -185,8 +185,12 @@ export default {
         }
       }
       selectCourseFromA(config);
-      alert('选课成功!')
-
+       this.$message({
+                showClose: true,
+                message: '选课成功',
+                type: 'success'
+              });
+      /*alert('选课成功!')*/
     },
     /**
      * 将json转化为xml格式

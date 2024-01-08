@@ -195,8 +195,12 @@ export default {
         }
       }
       selectCourseFromC(config);
-
-      alert('选课成功!')
+      this.$message({
+          showClose: true,
+          message: '选课成功',
+          type: 'success'
+        });
+      /*alert('选课成功!')*/
 
     },
     /**

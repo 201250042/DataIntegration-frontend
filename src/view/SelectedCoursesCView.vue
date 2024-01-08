@@ -140,8 +140,13 @@ export default {
         }
       }
       CDropCourse(config);
-      alert('退课成功！');
-      location.reload();
+      this.$message({
+              showClose: true,
+              message: '退课成功',
+              type: 'success',
+            });
+      /*alert('退课成功！');*/
+      /*location.reload();*/
     },
     /**
      * 返回选课
