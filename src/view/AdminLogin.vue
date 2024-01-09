@@ -30,25 +30,21 @@
             ></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button style="position: center;"
+            <el-button style=""
               type="primary"
               @click="login"
-              class="loginButton"
-
+              plain
             >登录</el-button>
-            <el-button style="position: absolute; left: 20px"
+            <el-button style=""
                        type="primary"
                        @click="register"
-                       class="registerButton"
-
+                       plain
             >注册</el-button>
-
+            <el-button type="warning" @click="retrievePWD" size="mini">忘记密码</el-button>
           </el-form-item>
         </el-form>
 
-        <div class="tips"  style="position: absolute;left: 1000px" >
-          <el-link type="white" @click="retrievePWD">忘记密码</el-link>
-        </div>
+
 
 
         <!--        <div class="warn">@NJU</div>-->
@@ -92,12 +88,12 @@
           sessionStorage.setItem('acc', 'admin'); //TODO: 最后需要删除
           this.$message({
             showClose: true,
-            message: '登录成功',
+            message: '登录成功！',
             type: 'success',
           });
           this.$router.push('/admin');
         } else {
-          this.$message.error('密码错误');
+          this.$message.error('密码错误！');
         }
 
       },
@@ -133,19 +129,8 @@
     margin-top: 20px;
   }
 
-  .loginButton {
-    margin-left:100px;
-  }
 
-  .registerButton{
-    margin-left: 65px;
-  }
 
-  .tips{
-    font-size: larger;
-    font-family: 黑体;
-    font-style: italic;
-  }
 
   #building{
     background:url("@/view/img/bricks.jpg");

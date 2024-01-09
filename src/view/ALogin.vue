@@ -30,26 +30,20 @@
           ></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button
-            type="primary"
-            @click="login"
-            class="loginButton"
-          >登录</el-button>
-
-          <el-button style="position: absolute; left: 20px"
-                     type="primary"
-                     @click="register"
-                     class="registerButton"
-
-          >注册</el-button>
-
-
+            <el-button style=""
+              type="primary"
+              @click="login"
+              plain
+            >登录</el-button>
+            <el-button style=""
+                       type="primary"
+                       @click="register"
+                       plain
+            >注册</el-button>
+            <el-button type="warning" @click="retrievePWD" size="mini">忘记密码</el-button>
         </el-form-item>
       </el-form>
 
-      <div class="tips"  style="position: absolute;left: 1000px" >
-        <el-link type="white" @click="retrievePWD">忘记密码</el-link>
-      </div>
 
     </el-card>
   </div>
@@ -102,7 +96,11 @@ export default {
             let map = xmlDoc.getElementsByTagName('string');
             // console.log(map);
             if (map.length == 2) {
-              alert('账户不存在，请先注册！');
+              /*alert('账户不存在，请先注册！');*/
+              this.$message({
+                message: '账户不存在，请先注册！',
+                type: 'warning'
+              });
               this.$router.push('/a-register');
               //TODO:跳转注册已完成
             }
@@ -112,7 +110,11 @@ export default {
               // console.log(token);
               sessionStorage.setItem('acc', this.loginForm.studentId);
               // sessionStorage.setItem('token', token);
-              alert('登录成功!');
+              /*alert('登录成功!');*/
+              this.$message({
+                message: '登录成功!',
+                type: 'success'
+              });
               this.$router.push('/a-course');
             }
           })
@@ -151,20 +153,6 @@ export default {
 
 .login-form {
   margin-top: 20px;
-}
-
-.loginButton {
-  margin-left:100px;
-}
-
-.registerButton{
-  margin-left: 65px;
-}
-
-.tips{
-  font-size: larger;
-  font-family: 黑体;
-  font-style: italic;
 }
 
 #building{
