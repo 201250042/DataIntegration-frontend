@@ -1,10 +1,10 @@
 <template>
   <div>
 
-    <Head
-      :acc="account"
-      :in="'C'"
-    ></Head>
+<!--    <Head-->
+<!--      :acc="account"-->
+<!--      :in="'C'"-->
+<!--    ></Head>-->
     <div class="institudeQuery">
       <el-select
         v-model="selectedInstitude"

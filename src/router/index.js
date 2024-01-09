@@ -28,6 +28,10 @@ import AdminLogin from '@/view/AdminLogin'
 import AdminView from '@/view/AdminView'
 
 import Identify from '@/view/Identify'
+import PersonalInfo from "@/view/PersonalInfo";
+import PersonalGradeCount from "@/view/charts/PersonalGradeCount";
+import SelectedCoursesCredits from "@/view/charts/SelectedCoursesCredits";
+import fa from "element-ui/src/locale/lang/fa";
 
 import AdminRegister from "@/view/AdminRegister.vue";
 import RetrievePWD from "@/view/retrievePWD.vue";
@@ -41,24 +45,37 @@ const router = new VueRouter({
     routes: [
         {
             path: '/',
-            redirect: '/identify'
+            redirect: '/identify',
         },
         // CC
         {
             path: '/c-login',
-            component: CLogin
+            name: 'c-login',
+            component: CLogin,
+            meta:{
+                keepMenulive : false
+            },
         },
         {
             path: '/c-course',
+            name: 'c-course',
             component: CoursesCView,
+            meta:{
+                keepMenulive : true
+            },
         },
         {
             path: '/student',
+            name: 'student',
             component: StudentView
         },
         {
             path: '/c-selectedCourses',
-            component: CSelectedCourses
+            name: 'c-selectedCourses',
+            component: CSelectedCourses,
+            meta:{
+                keepMenulive : true
+            },
         },
 
         {
@@ -68,14 +85,17 @@ const router = new VueRouter({
         // B
         {
             path: '/b-login',
+            name: 'b-login',
             component: BLogin
         },
         {
             path: '/b-course',
+            name: 'b-course',
             component: CoursesBView
         },
         {
             path: '/b-selectedCourses',
+            name: 'b-selectedCourses',
             component: BSelectedCourses
         },
 
@@ -86,14 +106,17 @@ const router = new VueRouter({
         // A
         {
             path: '/a-login',
+            name: 'a-login',
             component: ALogin
         },
         {
             path: '/a-course',
+            name: 'a-course',
             component: CoursesAView
         },
         {
             path: '/a-selectedCourses',
+            name: 'a-selectedCourses',
             component: ASelectedCourses
         },
         {
@@ -103,11 +126,17 @@ const router = new VueRouter({
         // Admin
         {
             path: '/admin-login',
-            component: AdminLogin
+            component: AdminLogin,
+            meta:{
+                keepMenulive : false
+            },
         },
         {
             path: '/admin',
-            component: AdminView
+            component: AdminView,
+            meta:{
+                keepMenulive : true
+            },
         },
 
         //wxc新增： AdminRegister
@@ -119,13 +148,43 @@ const router = new VueRouter({
         // Identify
         {
             path: '/identify',
-            component: Identify
+            name: 'identify',
+            component: Identify,
+            meta:{
+                keepMenulive : false
+            },
+        },
+
+        //以下为新增
+        //个人信息页面
+        {
+            path: '/personalInfo',
+            name: 'personalInfo',
+            component: PersonalInfo,
+            meta:{
+                keepMenulive : true
+            },
+        },
+
+        //用户查询已选课程成绩分布
+        {
+            path: '/personalGradeCount',
+            name: 'personalGradeCount',
+            component: PersonalGradeCount
+        },
+
+        //用户查询已选课程学分分布
+        {
+            path: '/selectedCoursesCredits',
+            name: 'selectedCoursesCredits',
+            component: SelectedCoursesCredits
         },
         //RetrievePWD 找回密码
         {
             path:'/retrieve-pwd',
             component:RetrievePWD
         }
+
 
 
     ]

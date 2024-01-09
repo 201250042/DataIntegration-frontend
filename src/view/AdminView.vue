@@ -72,11 +72,13 @@ import CoursesNumOfDiffCredits from './charts/CoursesNumOfDiffCredits.vue';
 import CoursesSelectionCount from './charts/CoursesSelectionCount.vue';
 import InstituteCount from './charts/InstituteCount.vue';
 import GradeCount from './charts/GradeCount.vue';
+import NavMenu from "@/view/NavMenu";
 const xml2js = require('xml2js');
 
 export default {
   components: {
     Head,
+    NavMenu,
     CoursesSelectionCount,
     CoursesNumOfDiffCredits,
     InstituteCount,
