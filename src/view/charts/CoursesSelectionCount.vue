@@ -40,7 +40,7 @@ export default {
     return {
       xData: [], //横坐标
       yData: [], //数据
-      myChartStyle: { float: "left", width: "800px", height: "500px" }, //图表样式
+      myChartStyle: { float: "left", width: "1000px", height: "500px" }, //图表样式
       selectedScale: 'A', //当前查看的范围
       titleText: 'A学院-课程人数分布情况',
       mostPopularCourse: '', //最受欢迎课程
@@ -65,7 +65,7 @@ export default {
             // 旋转角度
             showMaxLabel: true,
             interval: 0,
-            rotate: 35,
+            rotate: 55,
             fontSize: '16'
           },
         },
@@ -83,7 +83,13 @@ export default {
             data: this.yData,
             itemStyle: {
               normal: {
-                color: function () { return "#" + Math.floor(Math.random() * (256 * 256 * 256 - 1)).toString(16); }
+                // color: function () { return "#" + Math.floor(Math.random() * (256 * 256 * 256 - 1)).toString(16); }
+                color: function (params) {
+                  if (params.dataIndex >= 20) { return '#FF6384';}      // C
+                  else if (params.dataIndex >= 10) { return '#FFCE56';} // B
+                  else if (params.dataIndex >= 0) { return '#36A2EB';}  // A
+                  else { return '#000000'; }  // 写死了表格颜色，黑色表示超出范围了。
+                }
               },
             }
           }
