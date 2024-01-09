@@ -1,10 +1,10 @@
 <template>
   <div>
 
-    <Head
-      :acc="account"
-      :in="'ADMIN'"
-    ></Head>
+<!--    <Head-->
+<!--      :acc="account"-->
+<!--      :in="'ADMIN'"-->
+<!--    ></Head>-->
     <el-row class="tac">
       <el-col :span="5">
         <h1 style="margin-left: 22px;">数据分析</h1>
