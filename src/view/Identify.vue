@@ -3,30 +3,42 @@
   <div class="login-container">
     <el-card class="login-card">
       <div class="login-title">身份选择</div>
-      <el-link
+      <div style="text-align: center">
+      <el-button
         type="primary"
         @click="chooseIdenfify('A')"
         class="identifyChoice"
-
-      >A学生<br></el-link>
+        plain
+        size="small"
+      >A学生<br></el-button>
       <br>
-      <el-link
+      <br>
+      <el-button
         type="primary"
         @click="chooseIdenfify('B')"
         class="identifyChoice"
-      >B学生<br></el-link>
+        plain
+        size="small"
+      >B学生<br></el-button>
       <br>
-      <el-link
+      <br>
+      <el-button
         type="primary"
         @click="chooseIdenfify('C')"
         class="identifyChoice"
-      >C学生</el-link>
+        plain
+        size="small"
+      >C学生</el-button>
       <br>
-      <el-link
+      <br>
+      <el-button
         type="primary"
         @click="chooseIdenfify('ADMIN')"
         class="identifyChoice"
-      >管理员</el-link>
+        plain
+        size="small"
+      >管理员</el-button>
+      </div>
     </el-card>
   </div>
   </div>
