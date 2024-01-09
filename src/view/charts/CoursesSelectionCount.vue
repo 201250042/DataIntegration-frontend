@@ -40,7 +40,7 @@ export default {
     return {
       xData: [], //横坐标
       yData: [], //数据
-      myChartStyle: { float: "left", width: "1000px", height: "500px" }, //图表样式
+      myChartStyle: { float: "left", width: "990px", height: "470px" }, //图表样式
       selectedScale: 'A', //当前查看的范围
       titleText: 'A学院-课程人数分布情况',
       mostPopularCourse: '', //最受欢迎课程
