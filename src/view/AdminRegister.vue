@@ -61,7 +61,7 @@ export default {
       //如果用户名已存在，则需要换一个用户名
       this.user_list.forEach((item) => {
             if(item.username==this.name){
-              alert('用户已存在,请换一个用户名');
+              this.$message.error('用户已存在,请换一个用户名');
               flag=0;
             }
           }
@@ -70,7 +70,8 @@ export default {
       if(flag){
 
         if(this.pwd!=this.repwd){
-          alert('两次输入的密码不一致,请重新输入');
+          /*alert('两次输入的密码不一致,请重新输入');*/
+          this.$message.error('两次输入的密码不一致,请重新输入');
         }
         //如果密码也一致，则存到用户列表里面
         else {
@@ -81,7 +82,11 @@ export default {
           item.password=this.pwd;
           //存储到用户列表
           this.user_list.push(item);
-          alert('注册成功');
+          /*alert('注册成功');*/
+          this.$message({
+            message: '注册成功',
+            type: 'success'
+          });
           //    this.user_list.forEach((item) => {
           //       console.log( item.username);
           // })
