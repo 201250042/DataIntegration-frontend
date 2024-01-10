@@ -1,6 +1,8 @@
 <template>
   <div>
     <div>
+    <br>
+    <br>
       <el-select
           v-model="selectedInstitute"
           placeholder="院系"
@@ -23,16 +25,17 @@
           type="primary"
           @click="query"
           class="queryButton"
+          plain
       >查询</el-button>
       <el-button
           type="primary"
           @click="prev"
       >返回上一级页面</el-button>
     </div>
-    <div style="width:600px;height:400px;margin-top: 20px;">
+    <div style="width:600px;height:400px;margin-top: 20px;text-align:center;">
       <div
           id="gradeCount"
-          style="width:100%;height:400px;float:left;"
+          style="width:100%;height:400px;float:center;"
       ></div>
     </div>
   </div>

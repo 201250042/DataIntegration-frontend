@@ -1,5 +1,7 @@
 <template>
   <div>
+    <br>
+    <br>
     <el-button
         type="primary"
         :plain="this.selectedScale!=='A'"
