@@ -149,7 +149,11 @@ export default {
       }else if(this.form.sex === "男"){this.form.sex = "男";
       }
       this.handleClose();
-      alert("信息修改成功！")
+      /*alert("信息修改成功！")*/
+      this.$message({
+        message: '信息修改成功！',
+        type: 'success'
+      });
     },
     handleClose() {
       this.dialogVisible = false;
