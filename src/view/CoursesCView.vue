@@ -5,6 +5,8 @@
 <!--      :acc="account"-->
 <!--      :in="'C'"-->
 <!--    ></Head>-->
+    <br>
+    <br>
     <div class="institudeQuery">
       <el-select
         v-model="selectedInstitude"

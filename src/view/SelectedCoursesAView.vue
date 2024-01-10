@@ -2,7 +2,8 @@
   <div>
 
     <SelectedCoursesHead :acc="account"></SelectedCoursesHead>
-
+    <br>
+    <br>
     <el-button
       type="primary"
       plain
