@@ -187,48 +187,48 @@ export default {
         }
       ],
       coursesC: [
-        // C学院
-        {
-          value: '3001',
-          label: '3001'
-        },
-        {
-          value: '3002',
-          label: '3002'
-        },
-        {
-          value: '3003',
-          label: '3003'
-        },
-        {
-          value: '3004',
-          label: '3004'
-        },
-        {
-          value: '3005',
-          label: '3005'
-        },
-        {
-          value: '3006',
-          label: '3006'
-        },
-        {
-          value: '3007',
-          label: '3007'
-        },
-        {
-          value: '3008',
-          label: '3008'
-        },
-        {
-          value: '3009',
-          label: '3009'
-        },
-        {
-          value: '3010',
-          label: '3010'
-        }
-      ],
+              // C学院
+              {
+                value: '3001',
+                label: '3001 操作系统'
+              },
+              {
+                value: '3002',
+                label: '3002 计算机网络'
+              },
+              {
+                value: '3003',
+                label: '3003 软件工程'
+              },
+              {
+                value: '3004',
+                label: '3004 云计算'
+              },
+              {
+                value: '3005',
+                label: '3005 嵌入式'
+              },
+              {
+                value: '3006',
+                label: '3006 web前端'
+              },
+              {
+                value: '3007',
+                label: '3007 自动化分析'
+              },
+              {
+                value: '3008',
+                label: '3008 大数据分析'
+              },
+              {
+                value: '3009',
+                label: '3009 商务智能'
+              },
+              {
+                value: '3010',
+                label: '3010 数据集成'
+              }
+            ],
 
       courses: [
         // A学院

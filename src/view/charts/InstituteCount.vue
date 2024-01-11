@@ -110,11 +110,11 @@ export default {
       coursesA: [
         // A学院
         {
-          value: '1001',
+          value: '1001 微积分一',
           label: '1001'
         },
         {
-          value: '1002',
+          value: '1002 线性代数',
           label: '1002'
         },
         {
@@ -197,43 +197,43 @@ export default {
         // C学院
         {
           value: '3001',
-          label: '3001'
+          label: '3001 操作系统'
         },
         {
           value: '3002',
-          label: '3002'
+          label: '3002 计算机网络'
         },
         {
           value: '3003',
-          label: '3003'
+          label: '3003 软件工程'
         },
         {
           value: '3004',
-          label: '3004'
+          label: '3004 云计算'
         },
         {
           value: '3005',
-          label: '3005'
+          label: '3005 嵌入式'
         },
         {
           value: '3006',
-          label: '3006'
+          label: '3006 web前端'
         },
         {
           value: '3007',
-          label: '3007'
+          label: '3007 自动化分析'
         },
         {
           value: '3008',
-          label: '3008'
+          label: '3008 大数据分析'
         },
         {
           value: '3009',
-          label: '3009'
+          label: '3009 商务智能'
         },
         {
           value: '3010',
-          label: '3010'
+          label: '3010 数据集成'
         }
       ],
 
